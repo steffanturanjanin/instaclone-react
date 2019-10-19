@@ -1,9 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Errors from '../../../../notifications/errors';
-import Messages from '../../../../notifications/messages';
 import './style.css';
 
 const Form = (props) => {

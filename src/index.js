@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { Router, Route} from "react-router";
 import { createBrowserHistory } from 'history';
+import {BrowserRouter} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import * as serviceWorker from "./serviceWorker";
 
@@ -33,9 +34,9 @@ sagaMiddleware.run(IndexSaga);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory}>
+        <BrowserRouter>
             <App/>
-        </Router>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('root'));
 

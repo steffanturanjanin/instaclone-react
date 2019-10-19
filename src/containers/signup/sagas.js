@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { handleApiErrors, errorsPromise } from "../../lib/api-errors";
+import { handleApiErrors } from "../../lib/api-errors";
 import { SIGNUP_REQUESTING, SIGNUP_SUCCESS, SIGNUP_ERROR } from './constants';
 
 
