@@ -4,6 +4,8 @@ import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Header from '../../global/containers/header/index';
+
 import Form from './components/form/index';
 
 import loginRequestAction from './actions';
@@ -37,7 +39,10 @@ class Login extends Component {
         } = this.props;
 
         return (
-            <Form handleSubmit={handleSubmit(this.submit)} login={this.props.login}/>
+            <div>
+                <Header/>
+                <Form handleSubmit={handleSubmit(this.submit)} login={this.props.login}/>
+            </div>
         );
     }
 
