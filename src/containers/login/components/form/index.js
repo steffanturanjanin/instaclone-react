@@ -19,19 +19,29 @@ const Form = (props) => {
                             name="email"
                             type="text"
                             id="email"
-                            className={login.errors.hasOwnProperty('authentication') ? 'auth-input-error' : 'input-1'}
+                            className={login.errors.hasOwnProperty('authentication') || login.errors.hasOwnProperty('email') ? 'auth-input-error' : 'input-1'}
                             component="input"
                             placeholder='email'
                         />
+                        {!login.requesting && login.errors.hasOwnProperty('email') && (
+                            <div className='auth-messages'>
+                                <p> *{login.errors.email} </p>
+                            </div>
+                        )}
                         <div className="overlap-text">
                             <Field
                                 name="password"
                                 type="password"
                                 id="password"
-                                className={login.errors.hasOwnProperty('authentication') ? 'auth-input-error' : 'input-1'}
+                                className={login.errors.hasOwnProperty('authentication') || login.errors.hasOwnProperty('password') ? 'auth-input-error' : 'input-1'}
                                 component="input"
                                 placeholder='password'
                             />
+                            {!login.requesting && login.errors.hasOwnProperty('password') && (
+                                <div className='auth-messages'>
+                                    <p> *{login.errors.password} </p>
+                                </div>
+                            )}
                         </div>
                         <button action="submit" className='btn'>Log in</button>
                     </div>

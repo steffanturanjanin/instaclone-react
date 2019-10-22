@@ -29,15 +29,7 @@ const reducer = function signupReducer (state = initialState, action) {
           };
 
       case SIGNUP_ERROR:
-          const errs = [];
-          for (let [key, value] of Object.entries(action.error)) {
-              value.forEach( (val) => {
-                  errs.push({
-                      body: val,
-                      time: new Date()
-                  });
-              });
-          }
+
           console.log(action.error);
           return {
               requesting: false,

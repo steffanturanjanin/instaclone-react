@@ -63,13 +63,18 @@ const Form = (props) => {
                                 component="input"
                                 placeholder='confirm password'
                             />
+                            {!signup.requesting && signup.errors.hasOwnProperty('password_confirmation') && (
+                                <div className='auth-messages'>
+                                    <p> *{signup.errors.password_confirmation} </p>
+                                </div>
+                            )}
                         </div>
                         <button action="submit" className='btn'>Sign up</button>
                     </div>
                 </div>
                 <div className="sub-content">
                     <div className="s-part">
-                        Already have an account? <a href="#"> Log in </a>
+                        Already have an account? <a href="/"> Log in </a>
                     </div>
                 </div>
             </div>

@@ -26,11 +26,12 @@ const reducer = function loginReducer(state = initialState, action) {
             };
 
         case LOGIN_ERROR:
+            console.log(action);
             return {
                 requesting: false,
                 successful: false,
                 messages: [],
-                errors: {authentication: action.error}
+                errors: action.error
             };
 
         default:

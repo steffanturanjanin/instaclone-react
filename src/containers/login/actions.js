@@ -1,6 +1,6 @@
-import { LOGIN_REQUESTING } from "./constants";
+import { LOGIN_REQUESTING, LOGIN_ERROR } from "./constants";
 
-const loginRequestAction = function loginRequestAction({ email, password }) {
+export const loginRequestAction = function loginRequestAction({ email, password }) {
   return {
       type: LOGIN_REQUESTING,
       email,
@@ -8,4 +8,9 @@ const loginRequestAction = function loginRequestAction({ email, password }) {
   }
 };
 
-export default loginRequestAction;
+export const loginErrorAction = function loginErrorAction(error) {
+    return {
+        type: LOGIN_ERROR,
+        error,
+    }
+};

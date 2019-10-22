@@ -4,6 +4,7 @@ import { handleApiErrors } from "../../lib/api-errors";
 import { LOGIN_REQUESTING, LOGIN_SUCCESS, LOGIN_ERROR} from "./constants";
 import { setUserAction, unserUserAction } from "../../services/auth-service/actions";
 import { USER_SET, USER_UNSET} from "../../services/auth-service/constants";
+import { Redirect } from 'react-router-dom';
 
 const loginUrl = 'http://localhost:8000/api/auth/login';
 const browserHistory = createBrowserHistory();
@@ -30,6 +31,7 @@ function* logout() {
 }
 
 function* loginFlow (email, password) {
+    console.log('asdasd');
     let token;
     try {
         token = yield call(loginApi, email, password);
@@ -37,7 +39,8 @@ function* loginFlow (email, password) {
         yield put({ type: LOGIN_SUCCESS});
 
         localStorage.setItem('token', JSON.stringify(token));
-        browserHistory.push('/feed');
+        console.log('asdasdasd');
+        //browserHistory.push('/');
     } catch (error) {
         yield put({ type: LOGIN_ERROR, error});
     } finally {
@@ -46,7 +49,7 @@ function* loginFlow (email, password) {
             /*push to /login*/
         }
     }
-
+    console.log(token);
     return token;
 }
 

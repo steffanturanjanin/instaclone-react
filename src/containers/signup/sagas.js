@@ -1,7 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { handleApiErrors } from "../../lib/api-errors";
 import { SIGNUP_REQUESTING, SIGNUP_SUCCESS, SIGNUP_ERROR } from './constants';
+import { LOGIN_REQUESTING} from "../login/constants";
+import history from '../../lib/history';
 
+import { loginRequestAction } from "../login/actions";
 
 const signupUrl = 'http://localhost:8000/api/auth/signup';
 
@@ -26,9 +29,10 @@ function* signupFlow (action) {
         const { username, email, password, password_confirmation } = action;
         const response = yield call(signupApi, username, email, password, password_confirmation);
         yield put({ type: SIGNUP_SUCCESS, response});
+        yield put(loginRequestAction({email, password}));
+        //history.push('/');
     } catch (error) {
         console.log(error);
-
         yield put({ type: SIGNUP_ERROR, error});
     }
 }

@@ -1,6 +1,7 @@
-import { SIGNUP_REQUESTING } from "./constants";
+import {SIGNUP_ERROR, SIGNUP_REQUESTING} from "./constants";
+import {LOGIN_ERROR} from "../login/constants";
 
-const signupRequestAction = function signupRequestAction ({ username, email, password, password_confirmation }) {
+export const signupRequestAction = function signupRequestAction ({ username, email, password, password_confirmation }) {
   return {
       type: SIGNUP_REQUESTING,
       username,
@@ -10,4 +11,9 @@ const signupRequestAction = function signupRequestAction ({ username, email, pas
   }
 };
 
-export default signupRequestAction;
+export const signupErrorAction = function signupErrorAction(error) {
+    return {
+        type: SIGNUP_ERROR,
+        error
+    }
+};
