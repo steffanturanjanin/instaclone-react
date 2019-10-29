@@ -1,16 +1,55 @@
 import React, { Component } from 'react';
+import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './style.css';
 
+import UploadPhotoModal from './components/upload-photo-modal/index';
 
-class Home extends Component{
+import { uploadPhotoRequestAction } from "./actions/upload_photo_action";
+
+class Home extends Component {
+
+    static propTypes = {
+        uploadPhotoRequestAction: PropTypes.func,
+        uploadPhoto: PropTypes.shape({
+            requesting: PropTypes.bool,
+            successful: PropTypes.bool,
+            messages: PropTypes.array,
+            errors: PropTypes.object
+        })
+    };
+
+    handleUploadPhotoSubmit = (request) => {
+        this.props.uploadPhotoRequestAction(request);
+    };
+
     render() {
+        console.log(this.props);
         return (
-            <div>
-                THIS IS HOMEPAGE!!!;
+            <div className='home-container'>
+                <UploadPhotoModal
+                    handleUploadPhotoSubmit = {this.handleUploadPhotoSubmit}
+                    user = {this.props.auth.user}
+                    uploadPhoto={this.props.uploadPhoto}
+                />
             </div>
         );
 
     }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+    uploadPhoto: state.uploadPhotoReducer,
+    auth: state.authReducer,
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        uploadPhotoRequestAction: () => dispatch(uploadPhotoRequestAction)
+    }
+};
+
+const connected = connect(mapStateToProps, { uploadPhotoRequestAction })(Home);
+
+export default connected;

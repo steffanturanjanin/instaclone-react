@@ -4,12 +4,11 @@ import './index.css';
 import { applyMiddleware, createStore, compose } from "redux";
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import { Router, Route} from "react-router";
 import { createBrowserHistory } from 'history';
 import {BrowserRouter} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.css';
 import * as serviceWorker from "./serviceWorker";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 
@@ -20,7 +19,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const composeSetup = process.env.NODE_ENV !== 'production' && typeof window === 'object' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
 
 export const store = createStore(
     IndexReducer,

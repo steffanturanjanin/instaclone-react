@@ -1,21 +1,22 @@
 import { USER_SET, USER_UNSET } from "./constants";
 
 const initialState = {
-    id: null,
+    user: null,
     token: null,
 };
 
 const reducer = function authReducer (state = initialState, action) {
   switch (action.type) {
       case USER_SET:
+          console.log(action.token);
           return {
-              id: action.token.userId,
+              user: action.token.user,
               token: action.token,
           };
 
       case USER_UNSET:
           return {
-              id: null,
+              user: null,
               token: null,
           };
 

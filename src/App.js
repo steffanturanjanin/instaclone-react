@@ -13,6 +13,8 @@ import Home from './containers/home/index';
 import Redirectioner from './lib/redirectioner';
 import {loginErrorAction, loginRequestAction} from "./containers/login/actions";
 
+import Header from './global/containers/header/index';
+
 class App extends Component{
 
     componentDidMount() {
@@ -21,11 +23,16 @@ class App extends Component{
 
     render() {
         return (
-            <Switch>
-                <Route exact path='/signup' component={Signup}/>
-                <Route exact path='/redirect' component={Redirectioner}/>
-                <Route exact path='/' component={this.props.token ? Home : Login}/>
-            </Switch>
+            <div>
+                <Header token={this.props.token}/>
+                <div className='container'>
+                    <Switch>
+                        <Route exact path='/signup' component={Signup} />
+                        <Route exact path='/redirect' component={Redirectioner}/>
+                        <Route exact path='/' component={this.props.token ? Home : Login}/>
+                    </Switch>
+                </div>
+            </div>
         );
     }
 }

@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { Field } from "redux-form";
+import { reduxForm, Field } from "redux-form";
 
 import './style.css';
 
 class Header extends Component {
 
     render() {
+        console.log(this.props);
 
-        if (window.location.pathname === '/' || window.location.pathname === '/signup') {
+        /*if (window.location.pathname === '/' || window.location.pathname === '/signup') {
+            return null;
+        }*/
+
+        if (this.props.token === null) {
             return null;
         }
 
@@ -27,14 +32,14 @@ class Header extends Component {
                         <img src='https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png' alt=''/>
                     </div>
                     <div className='search'>
-                        <Field
-                            name="search"
-                            type="search"
-                            id="search"
-                            className="search-input"
-                            component="input"
-                            placeholder='search'
-                        />
+                        <form>
+                            <Field name="search"
+                                   type="search"
+                                   id="search"
+                                   className="search-input"
+                                   component="input"
+                                   placeholder='search'/>
+                        </form>
                     </div>
                     <div className='nav-buttons'>
                         <div className='svg-container'>
@@ -67,4 +72,8 @@ class Header extends Component {
     }
 }
 
-export default Header;
+const formed = reduxForm({
+    form: 'search',
+})(Header);
+
+export default formed;

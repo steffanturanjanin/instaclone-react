@@ -31,15 +31,14 @@ function* logout() {
 }
 
 function* loginFlow (email, password) {
-    console.log('asdasd');
     let token;
     try {
         token = yield call(loginApi, email, password);
+        console.log(token);
         yield put(setUserAction(token));
         yield put({ type: LOGIN_SUCCESS});
 
         localStorage.setItem('token', JSON.stringify(token));
-        console.log('asdasdasd');
         //browserHistory.push('/');
     } catch (error) {
         yield put({ type: LOGIN_ERROR, error});
@@ -49,7 +48,6 @@ function* loginFlow (email, password) {
             /*push to /login*/
         }
     }
-    console.log(token);
     return token;
 }
 
