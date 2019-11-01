@@ -25,7 +25,7 @@ class App extends Component{
         return (
             <div>
                 <Header token={this.props.token}/>
-                <div className='container'>
+                <div >
                     <Switch>
                         <Route exact path='/signup' component={Signup} />
                         <Route exact path='/redirect' component={Redirectioner}/>

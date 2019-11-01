@@ -1,6 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { handleApiErrors } from "../../../lib/api-errors";
 import { UPLOAD_PHOTO_REQUESTING, UPLOAD_PHOTO_SUCCESS, UPLOAD_PHOTO_ERROR } from "../constants/upload_photo_constants";
+import { ADD_PHOTO } from "../constants/feed_constants";
 
 const uploadPhotoUrl = 'http://localhost:8000/api/photo';
 
@@ -31,6 +32,7 @@ function* uploadPhotoFlow (action) {
         const {photo, description, user_id} = action.request;
         const response = yield call(uploadPhotoApi, photo, description, user_id);
         yield put({ type: UPLOAD_PHOTO_SUCCESS, response});
+        yield put({ type: ADD_PHOTO, uploaded_photo: response.uploaded_photo})
     } catch (error) {
         yield put({ type: UPLOAD_PHOTO_ERROR, error})
     }

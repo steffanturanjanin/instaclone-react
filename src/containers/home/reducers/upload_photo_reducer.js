@@ -22,7 +22,7 @@ const reducer = function uploadPhotoReducer( state = initialState, action) {
 
         case UPLOAD_PHOTO_SUCCESS: {
             return {
-                uploaded_photo: action.photo,
+                uploaded_photo: action.uploaded_photo,
                 requesting: false,
                 successful: true,
                 messages: [{body: 'Photo successfully uploaded', time: new Date()}],

@@ -5,13 +5,26 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 import UploadPhotoModal from './components/upload-photo-modal/index';
+import Feed from './components/feed/index';
 
 import { uploadPhotoRequestAction } from "./actions/upload_photo_action";
+import { getFeedRequestAction } from "./actions/feed_actions";
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+    }
 
     static propTypes = {
         uploadPhotoRequestAction: PropTypes.func,
+        getFeedRequestAction: PropTypes.func,
+        feed: PropTypes.shape({
+            photos: PropTypes.array,
+            requesting: PropTypes.bool,
+            successful: PropTypes.bool,
+            messages: PropTypes.array,
+            error: PropTypes.object,
+        }),
         uploadPhoto: PropTypes.shape({
             requesting: PropTypes.bool,
             successful: PropTypes.bool,
@@ -31,8 +44,11 @@ class Home extends Component {
                 <UploadPhotoModal
                     handleUploadPhotoSubmit = {this.handleUploadPhotoSubmit}
                     user = {this.props.auth.user}
-                    uploadPhoto={this.props.uploadPhoto}
+                    uploadPhoto = {this.props.uploadPhoto}
                 />
+
+                <Feed/>
+
             </div>
         );
 
@@ -40,9 +56,11 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-    uploadPhoto: state.uploadPhotoReducer,
     auth: state.authReducer,
+    feed: state.feedReducer,
+    uploadPhoto: state.uploadPhotoReducer,
 });
+
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -50,6 +68,6 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-const connected = connect(mapStateToProps, { uploadPhotoRequestAction })(Home);
+const connected = connect(mapStateToProps, { uploadPhotoRequestAction, getFeedRequestAction })(Home);
 
 export default connected;

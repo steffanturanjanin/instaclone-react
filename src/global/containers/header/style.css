@@ -20,6 +20,7 @@
     width: 100%;
     transition: 0.2s;
     text-align: center;
+    z-index: 1;
 }
 
 .nav-content {
