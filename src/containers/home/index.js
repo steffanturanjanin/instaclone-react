@@ -20,10 +20,7 @@ class Home extends Component {
         getFeedRequestAction: PropTypes.func,
         feed: PropTypes.shape({
             photos: PropTypes.array,
-            requesting: PropTypes.bool,
-            successful: PropTypes.bool,
-            messages: PropTypes.array,
-            error: PropTypes.object,
+            get_feed_api: PropTypes.object,
         }),
         uploadPhoto: PropTypes.shape({
             requesting: PropTypes.bool,

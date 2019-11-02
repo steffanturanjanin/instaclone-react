@@ -2,58 +2,46 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './style.css';
 
+import FeedItem from './feed-item/index';
+import ShowPhotoModal from './show-photo-modal/index';
+
 import { getFeedRequestAction } from "../../actions/feed_actions";
+import { closeModal, currentPhoto, nextPhoto, previousPhoto } from "../../actions/feed_actions";
+
 
 class Feed extends Component {
+
 
     componentDidMount() {
         this.props.getFeedRequestAction();
     }
 
     render() {
-        if (this.props.feed.get_feed_successful) {
+
+        if (this.props.feed.get_feed_api.successful) {
             return (
-                /*<div className='gallery-container'>
-                    <div className='gallery'>
+                <>
+                    <section className="post-list">
                         {this.props.feed.photos.map((photo, index) => {
                             return (
-                                <div className='gallery-item' tabIndex='0' key={index}>
-                                    <img className='gallery-image' src={`data:image/jpeg;base64,${photo.content}`} alt='' />
-
-                                    <div className="gallery-item-info">
-
-                                        <ul>
-                                            <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span>
-                                                <i className="fa fa-heart" aria-hidden="true"/> 66
-                                            </li>
-                                            <li className="gallery-item-comments"><span
-                                                className="visually-hidden">Comments:</span><i className="fa fa-comment" aria-hidden="true"/> 2
-                                            </li>
-                                        </ul>
-
-                                    </div>
-                                </div>
+                                <FeedItem
+                                    key={index}
+                                    photo={photo}
+                                    showModal={this.props.currentPhoto}
+                                />
                             )
                         })}
-                    </div>
-                </div>*/
-                <section className="post-list">
-                    {this.props.feed.photos.map((photo, index) => {
-                        return (
-                            <a href="" className="post" key={index}>
-                                <figure className="post-image">
-                                    <img src={`data:image/jpeg;base64,${photo.content}`} alt=""/>
-                                </figure>
-                                <div className="post-overlay">
-                                    <p>
-                                        <span className="post-likes"><i className="fa fa-heart" aria-hidden="true"/> 150</span>
-                                        <span className="post-comments"><i className="fa fa-comment" aria-hidden="true"/> 10</span>
-                                    </p>
-                                </div>
-                            </a>
-                        )
-                    })}
-                </section>
+                    </section>
+                    <ShowPhotoModal
+                        show={this.props.feed.modal.show}
+                        onHide={this.props.closeModal}
+                        photo={this.props.feed.modal.current_photo}
+                        previousPhoto={this.props.previousPhoto}
+                        nextPhoto={this.props.nextPhoto}
+                        modal={this.props.feed.modal}
+                    />
+
+                </>
             )
         } else {
             return null;
@@ -67,6 +55,6 @@ const mapStateToProps = state => ({
 });
 
 
-const connected = connect(mapStateToProps, { getFeedRequestAction })(Feed);
+const connected = connect(mapStateToProps, { getFeedRequestAction, closeModal, currentPhoto, nextPhoto, previousPhoto })(Feed);
 
 export default connected;

@@ -1,0 +1,19 @@
+
+.carousel-body {
+    padding: 0;
+    margin-left: -60px;
+}
+
+.slide-left {
+    margin-right: 20px;
+    font-size: 40px;
+    color: #dbdbdb;
+    cursor: pointer;
+}
+
+.slide-right {
+    margin-left: 20px;
+    font-size: 40px;
+    color: #dbdbdb;
+    cursor: pointer;
+}
