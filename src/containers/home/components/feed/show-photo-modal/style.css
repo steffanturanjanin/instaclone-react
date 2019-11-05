@@ -1,19 +1,62 @@
 
-.carousel-body {
+.modal-container {
+    margin: 0;
+}
+
+.modal-image-container {
     padding: 0;
-    margin-left: -60px;
+    background-color: #383032;
+}
+
+.modal-image-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+
+    width: 100%;
+
+    max-height: 600px;
+    vertical-align: top;
+    object-fit: cover;
+    float: left;
+}
+
+.modal-info-section-container {
+    max-height: 600px;
+    overflow: auto;
 }
 
 .slide-left {
-    margin-right: 20px;
-    font-size: 40px;
+    font-size: 30px;
     color: #dbdbdb;
     cursor: pointer;
+
+    position: absolute;
+    top:  50%;
+    left: -2%;
+    transform: translate(-50%,-50%);
+
 }
 
 .slide-right {
-    margin-left: 20px;
-    font-size: 40px;
+    font-size: 30px;
     color: #dbdbdb;
     cursor: pointer;
+
+    position: absolute;
+    top:  50%;
+    right: -6%;
+    transform: translate(-50%,-50%);
+
 }
+

@@ -5,6 +5,7 @@ import signupReducer from './containers/signup/reducer';
 import loginReducer from './containers/login/reducer';
 import uploadPhotoReducer from './containers/home/reducers/upload_photo_reducer';
 import feedReducer from './containers/home/reducers/feed_reducer';
+import photoReducer from './containers/home/reducers/photo_reducer';
 
 const IndexReducer = combineReducers({
     authReducer,
@@ -12,6 +13,7 @@ const IndexReducer = combineReducers({
     loginReducer,
     uploadPhotoReducer,
     feedReducer,
+    photoReducer,
     form,
 });
 

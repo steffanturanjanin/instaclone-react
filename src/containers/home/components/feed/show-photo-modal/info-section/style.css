@@ -1,0 +1,70 @@
+.info-section-container {
+    margin: 0;
+}
+
+.info-section-header {
+    border-bottom: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    padding: 3%;
+}
+
+.info-section-header-user-avatar {
+    border-radius: 50%;
+    width: 30px;
+    vertical-align: top;
+    object-fit: cover;
+    float: left;
+}
+
+.info-section-header-username {
+    font-size: 14px;
+    float: left;
+    text-align: center;
+    color: #262626;
+    font-weight: 600;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.info-section-comment-section {
+    height:500px;
+}
+
+.info-section-comment-container {
+    border-bottom: 1px solid #dbdbdb;
+    border-left: 1px solid #dbdbdb;
+    padding: 3%;
+    display: flex;
+}
+
+.info-section-comment-avatar-container {
+    float: left;
+    margin-right: 10px;
+}
+
+.info-section-comment-avatar {
+    border-radius: 50%;
+    width: 30px;
+    vertical-align: top;
+    object-fit: cover;
+    float: left;
+}
+
+.info-section-comment-content-container {
+    float: left;
+    word-wrap: break-word;
+}
+
+.info-section-comment-username {
+    font-size: 12px;
+    float: left;
+    text-align: center;
+    color: #262626;
+    font-weight: 600;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.info-section-comment-content {
+    font-size: 12px;
+}

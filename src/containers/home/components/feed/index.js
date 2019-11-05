@@ -7,16 +7,23 @@ import ShowPhotoModal from './show-photo-modal/index';
 
 import { getFeedRequestAction } from "../../actions/feed_actions";
 import { closeModal, currentPhoto, nextPhoto, previousPhoto } from "../../actions/feed_actions";
+import { setPhoto } from "../../actions/photo_actions";
 
 
 class Feed extends Component {
 
+
+    showInModal = (photo) => {
+        this.props.currentPhoto(photo);
+        this.props.setPhoto(photo);
+    };
 
     componentDidMount() {
         this.props.getFeedRequestAction();
     }
 
     render() {
+
 
         if (this.props.feed.get_feed_api.successful) {
             return (
@@ -27,7 +34,7 @@ class Feed extends Component {
                                 <FeedItem
                                     key={index}
                                     photo={photo}
-                                    showModal={this.props.currentPhoto}
+                                    showInModal={this.showInModal}
                                 />
                             )
                         })}
@@ -35,10 +42,11 @@ class Feed extends Component {
                     <ShowPhotoModal
                         show={this.props.feed.modal.show}
                         onHide={this.props.closeModal}
-                        photo={this.props.feed.modal.current_photo}
+                        photo={this.props.photo.photo}
                         previousPhoto={this.props.previousPhoto}
                         nextPhoto={this.props.nextPhoto}
                         modal={this.props.feed.modal}
+                        setPhoto={this.props.setPhoto}
                     />
 
                 </>
@@ -51,10 +59,11 @@ class Feed extends Component {
 }
 
 const mapStateToProps = state => ({
-    feed: state.feedReducer
+    feed: state.feedReducer,
+    photo: state.photoReducer
 });
 
 
-const connected = connect(mapStateToProps, { getFeedRequestAction, closeModal, currentPhoto, nextPhoto, previousPhoto })(Feed);
+const connected = connect(mapStateToProps, { getFeedRequestAction, closeModal, currentPhoto, nextPhoto, previousPhoto, setPhoto })(Feed);
 
 export default connected;
