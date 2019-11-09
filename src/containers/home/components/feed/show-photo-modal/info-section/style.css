@@ -3,8 +3,8 @@
 }
 
 .info-section-header {
-    border-bottom: 1px solid #dbdbdb;
-    border-left: 1px solid #dbdbdb;
+    border-bottom: 2px solid #dbdbdb;
+    border-left: 2px solid #dbdbdb;
     padding: 3%;
 }
 
@@ -28,6 +28,7 @@
 
 .info-section-comment-section {
     height:500px;
+    width: 100%;
 }
 
 .info-section-comment-container {
@@ -51,6 +52,7 @@
 }
 
 .info-section-comment-content-container {
+    width: 100%;
     float: left;
     word-wrap: break-word;
 }

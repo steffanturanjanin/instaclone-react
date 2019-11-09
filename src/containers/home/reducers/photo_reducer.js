@@ -1,7 +1,17 @@
-import { SET_PHOTO } from "../constants/photo_constants";
+import { SET_PHOTO, GET_PHOTO_INFO_API_REQUESTING, GET_PHOTO_INFO_API_SUCCESSFUL, GET_PHOTO_INFO_API_ERROR } from "../constants/photo_constants";
 
 const initialState = {
-    photo: {}
+    photo: {},
+    comments: [],
+    user: {},
+
+    get_photo_info_api : {
+        requesting: false,
+        successful: false,
+        messages: [],
+        error: {}
+    },
+
 };
 
 const reducer = function photoReducer (state = initialState, action) {
@@ -12,6 +22,46 @@ const reducer = function photoReducer (state = initialState, action) {
                 photo: action.photo,
             }
         }
+
+        case GET_PHOTO_INFO_API_REQUESTING : {
+            return {
+                ...state,
+                comments: [],
+                get_photo_info_api: {
+                    requesting: true,
+                    successful: false,
+                    messages: [],
+                    error: {}
+                }
+            }
+        }
+
+        case GET_PHOTO_INFO_API_SUCCESSFUL: {
+            return {
+                ...state,
+                comments: action.comments,
+                user: action.user,
+                get_photo_info_api: {
+                    requesting: false,
+                    successful: true,
+                    messages: action.messages,
+                    error: {}
+                },
+            }
+        }
+
+        case GET_PHOTO_INFO_API_ERROR: {
+            return {
+                ...state,
+                get_photo_info_api: {
+                    requesting: false,
+                    successful: false,
+                    messages: [],
+                    error: action.error
+                }
+            }
+        }
+
         default:
             return state
     }

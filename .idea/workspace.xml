@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b22eb2f8-f9d8-4541-a2ea-58ba6cf23f60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/containers/home/actions/photo_actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/home/constants/photo_constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/home/sagas/photo_sagas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/global/components/loader/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/global/components/loader/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/home/components/feed/feed-item/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/components/feed/feed-item/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/actions/photo_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/actions/photo_actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/home/components/feed/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/components/feed/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/constants/photo_constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/constants/photo_constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/sagas/photo_sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/sagas/photo_sagas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index-saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index-saga.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,24 +26,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DockManager">
-    <window id="4">
+    <window id="5">
       <content type="file-editors">
         <state>
           <leaf>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/style.css">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="443">
-                    <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/style.css">
+              <entry file="file://$PROJECT_DIR$/src/containers/home/sagas/upload_photo_sagas.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="493">
-                    <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+                  <state relative-caret-position="425">
+                    <caret line="34" column="78" lean-forward="true" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
+                    <folding>
+                      <element signature="e#0#59#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -60,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+            <state relative-caret-position="416">
+              <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -70,34 +65,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/home/index.js">
+        <entry file="file://$PROJECT_DIR$/src/index-saga.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+            <state relative-caret-position="221">
+              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+            <state relative-caret-position="119">
+              <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -106,19 +89,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/global/containers/header/style.css">
+        <entry file="file://$PROJECT_DIR$/src/global/components/loader/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/style.css">
+        <entry file="file://$PROJECT_DIR$/src/global/components/loader/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="92" column="19" lean-forward="true" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+            <state relative-caret-position="255">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/home/actions/photo_actions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/home/sagas/photo_sagas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/home/constants/photo_constants.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="67" lean-forward="true" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -138,9 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/containers/login/components/form/index.js" />
-        <option value="$PROJECT_DIR$/src/lib/redirectioner.js" />
-        <option value="$PROJECT_DIR$/src/lib/history.js" />
         <option value="$PROJECT_DIR$/src/containers/login/index.js" />
         <option value="$PROJECT_DIR$/src/containers/signup/sagas.js" />
         <option value="$PROJECT_DIR$/src/containers/signup/actions.js" />
@@ -167,36 +201,39 @@
         <option value="$PROJECT_DIR$/src/containers/home/actions/upload_photo_action.js" />
         <option value="$PROJECT_DIR$/src/containers/home/components/upload-photo-modal/style.css" />
         <option value="$PROJECT_DIR$/src/containers/home/components/upload-photo-modal/index.js" />
-        <option value="$PROJECT_DIR$/src/index-saga.js" />
         <option value="$PROJECT_DIR$/src/containers/home/sagas/feed_sagas.js" />
-        <option value="$PROJECT_DIR$/src/global/containers/header/style.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/containers/home/reducers/upload_photo_reducer.js" />
         <option value="$PROJECT_DIR$/src/containers/home/constants/upload_photo_constants.js" />
         <option value="$PROJECT_DIR$/src/containers/home/sagas/upload_photo_sagas.js" />
-        <option value="$PROJECT_DIR$/src/containers/home/components/feed/style.css" />
         <option value="$PROJECT_DIR$/src/containers/home/index.js" />
         <option value="$PROJECT_DIR$/src/containers/home/constants/feed_constants.js" />
         <option value="$PROJECT_DIR$/src/containers/home/actions/feed_actions.js" />
         <option value="$PROJECT_DIR$/src/containers/home/reducers/feed_reducer.js" />
-        <option value="$PROJECT_DIR$/src/containers/home/constants/photo_constants.js" />
         <option value="$PROJECT_DIR$/src/index-reducer.js" />
-        <option value="$PROJECT_DIR$/src/containers/home/actions/photo_actions.js" />
-        <option value="$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js" />
-        <option value="$PROJECT_DIR$/src/containers/home/components/feed/index.js" />
         <option value="$PROJECT_DIR$/src/containers/home/components/feed/feed-item/index.js" />
         <option value="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/style.css" />
-        <option value="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/home/components/feed/style.css" />
+        <option value="$PROJECT_DIR$/src/global/containers/header/style.css" />
+        <option value="$PROJECT_DIR$/src/index-saga.js" />
         <option value="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/style.css" />
+        <option value="$PROJECT_DIR$/src/containers/home/constants/photo_constants.js" />
+        <option value="$PROJECT_DIR$/src/containers/home/sagas/photo_sagas.js" />
+        <option value="$PROJECT_DIR$/src/containers/home/actions/photo_actions.js" />
+        <option value="$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js" />
         <option value="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js" />
+        <option value="$PROJECT_DIR$/src/containers/home/components/feed/index.js" />
+        <option value="$PROJECT_DIR$/src/global/components/loader/index.js" />
+        <option value="$PROJECT_DIR$/src/global/components/loader/style.css" />
+        <option value="$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1361" />
+    <option name="x" value="-1928" />
     <option name="y" value="-321" />
-    <option name="width" value="1377" />
-    <option name="height" value="749" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -254,16 +291,6 @@
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="feed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="instaclone-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="instaclone-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="feed" type="462c0819:PsiDirectoryNode" />
-              <item name="feed-item" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instaclone-react" type="b2602c69:ProjectViewProjectNode" />
@@ -352,15 +379,15 @@
               <item name="instaclone-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instaclone-react" type="b2602c69:ProjectViewProjectNode" />
               <item name="instaclone-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="global" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="loader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="instaclone-react" type="b2602c69:ProjectViewProjectNode" />
@@ -428,12 +455,12 @@
       <option name="presentableId" value="Default" />
       <updated>1571219177070</updated>
       <workItem from="1571219179251" duration="72111000" />
-      <workItem from="1571483088199" duration="275529000" />
+      <workItem from="1571483088199" duration="308642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347640000" />
+    <option name="totallyTimeSpent" value="380753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,12 +526,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/services/auth-service/constants.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/auth-service/saga.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/auth-service/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -617,16 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index-saga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/home/sagas/feed_sagas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -672,16 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/sagas/upload_photo_sagas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/logo192.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -721,12 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/sagas/photo_sagas.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/constants/photo_constants.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/home/actions/feed_actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -757,20 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/feed-item/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -788,20 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/actions/photo_actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="92" column="19" lean-forward="true" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/esm/Modal.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -809,61 +776,143 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="93" column="22" lean-forward="true" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/global/containers/header/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="44" column="12" lean-forward="true" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/sagas/upload_photo_sagas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" column="78" lean-forward="true" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+          <caret line="46" column="18" lean-forward="true" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="69" column="31" lean-forward="true" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/constants/photo_constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="67" lean-forward="true" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/actions/photo_actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/sagas/photo_sagas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/reducers/photo_reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/feed-item/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        <state relative-caret-position="416">
+          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js">
+    <entry file="file://$PROJECT_DIR$/src/index-saga.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+        <state relative-caret-position="221">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/style.css">
+    <entry file="file://$PROJECT_DIR$/src/global/components/loader/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        <state relative-caret-position="255">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/global/containers/header/style.css">
+    <entry file="file://$PROJECT_DIR$/src/global/components/loader/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="272">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/style.css">
+    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/components/feed/show-photo-modal/info-section/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        <state relative-caret-position="119">
+          <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

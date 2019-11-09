@@ -32,6 +32,7 @@
 }
 
 .modal-info-section-container {
+    padding: 0;
     max-height: 600px;
     overflow: auto;
 }

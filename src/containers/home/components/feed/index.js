@@ -7,7 +7,7 @@ import ShowPhotoModal from './show-photo-modal/index';
 
 import { getFeedRequestAction } from "../../actions/feed_actions";
 import { closeModal, currentPhoto, nextPhoto, previousPhoto } from "../../actions/feed_actions";
-import { setPhoto } from "../../actions/photo_actions";
+import { setPhoto, getPhotoInfoRequestAction } from "../../actions/photo_actions";
 
 
 class Feed extends Component {
@@ -16,6 +16,7 @@ class Feed extends Component {
     showInModal = (photo) => {
         this.props.currentPhoto(photo);
         this.props.setPhoto(photo);
+        this.props.getPhotoInfoRequestAction(photo.id, photo.user_id);
     };
 
     componentDidMount() {
@@ -43,6 +44,10 @@ class Feed extends Component {
                         show={this.props.feed.modal.show}
                         onHide={this.props.closeModal}
                         photo={this.props.photo.photo}
+                        comments={this.props.photo.comments}
+                        user={this.props.photo.user}
+                        status={this.props.photo.get_photo_info_api}
+                        getPhotoInfoRequestAction={this.props.getPhotoInfoRequestAction}
                         previousPhoto={this.props.previousPhoto}
                         nextPhoto={this.props.nextPhoto}
                         modal={this.props.feed.modal}
@@ -64,6 +69,6 @@ const mapStateToProps = state => ({
 });
 
 
-const connected = connect(mapStateToProps, { getFeedRequestAction, closeModal, currentPhoto, nextPhoto, previousPhoto, setPhoto })(Feed);
+const connected = connect(mapStateToProps, { getFeedRequestAction, closeModal, currentPhoto, nextPhoto, previousPhoto, setPhoto, getPhotoInfoRequestAction })(Feed);
 
 export default connected;
