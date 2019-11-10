@@ -70,3 +70,50 @@
 .info-section-comment-content {
     font-size: 12px;
 }
+
+.comment-like-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.like-icon {
+    font-size: 25px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.likes {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.post-date {
+    font-size: 12px;
+    font-weight: 100;
+    color: #937d85;
+    float: right;
+}
+
+.post-comment-area {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.post-comment-textarea {
+    width: 70%;
+    height: 50px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.post-comment-button {
+    margin-left: 10px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-right: 30px;
+    font-weight: 600;
+}

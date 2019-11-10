@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import './style.css';
 
 import InfoSection from './info-section/index';
+import LikesModal from '../show-photo-modal/likes-modal/index';
 import Loader from '../../../../../global/components/loader/index';
 
 const ShowPhotoModal = (props) => {
@@ -48,12 +49,23 @@ const ShowPhotoModal = (props) => {
                                     </div>
                                 </div>
                                 <div className='col-5 modal-info-section-container'>
-                                <InfoSection
-                                description={props.photo.description}
-                                comments={props.comments}
-                                user={props.user}
-                                />
+                                    <InfoSection
+                                        id={props.photo.id}
+                                        description={props.photo.description}
+                                        comments={props.comments}
+                                        likes_number={props.photo.likes}
+                                        user={props.user}
+                                        getLikesRequestAction={props.getLikesRequestAction}
+                                    />
                                 </div>
+
+                                <LikesModal
+                                    show={props.likesModal.show}
+                                    onHide={props.closeLikesModalAction}
+                                    likes={props.likesModal.likes}
+                                    status={props.likesStatus}
+                                />
+
                             </>
                         )}
 

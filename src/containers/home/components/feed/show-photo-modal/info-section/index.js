@@ -3,6 +3,11 @@ import './style.css'
 
 const InfoSection = (props) => {
 
+    function showLikesModalAction () {
+
+        props.getLikesRequestAction(props.id);
+    }
+
     return (
         <div className='row info-section-container'>
             <div className='col-12 info-section-header'>
@@ -54,13 +59,13 @@ const InfoSection = (props) => {
                     })
                 }
 
-                <div className='col-12' style={{marginBottom:'20px', marginTop:'20px'}}>
-                    <i className='fa fa-heart' style={{fontSize:'25px', marginBottom:'10px', float:'left'}}/>
-                    <p style={{fontSize:'12px', fontWeight: '600', marginLeft:'10px', float:'left'}}>8494 likes</p>
-                    <p style={{fontSize:'12px', fontWeight:'100', color:'#937d85', float:'right'}}> 4 days ago</p>
-                    <div style={{marginBottom:'15px', marginTop:'20px'}}>
-                        <textarea className='form-control' style={{  width:'70%', height:'50px', marginBottom:'15px', fontSize:'12px'}}/>
-                        <a style={{ marginLeft:'10px', position:'absolute', right:'0', top:'50%', marginRight:'30px', fontWeight:'600'}}>Post</a>
+                <div className='col-12 comment-like-container'>
+                    <i className='fa fa-heart like-icon'/>
+                    <p className='likes' onClick={showLikesModalAction}>{props.likes_number}</p>
+                    <p className='post-date'> 4 days ago</p>
+                    <div className='post-comment-area'>
+                        <textarea className='form-control post-comment-textarea'/>
+                        <a className='post-comment-button'>Post</a>
                     </div>
                 </div>
 
