@@ -116,4 +116,8 @@
     top: 50%;
     margin-right: 30px;
     font-weight: 600;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    border: none;
 }

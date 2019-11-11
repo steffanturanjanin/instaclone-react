@@ -1,8 +1,15 @@
 import {
     SET_PHOTO,
-    GET_PHOTO_INFO_API_REQUESTING, GET_PHOTO_INFO_API_SUCCESSFUL, GET_PHOTO_INFO_API_ERROR,
+    GET_PHOTO_INFO_API_REQUESTING,
+    GET_PHOTO_INFO_API_SUCCESSFUL,
+    GET_PHOTO_INFO_API_ERROR,
     CLOSE_LIKES_MODAL,
-    GET_LIKES_API_REQUESTING, GET_LIKES_API_SUCCESSFUL, GET_LIKES_API_ERROR} from "../constants/photo_constants";
+    GET_LIKES_API_REQUESTING,
+    GET_LIKES_API_SUCCESSFUL,
+    GET_LIKES_API_ERROR,
+    POST_COMMENT_API_REQUESTING,
+    POST_COMMENT_API_SUCCESSFUL, POST_COMMENT_API_ERROR
+} from "../constants/photo_constants";
 
 const initialState = {
     photo: {},
@@ -17,6 +24,13 @@ const initialState = {
     },
 
     get_likes_api: {
+        requesting: false,
+        successful: false,
+        messages: [],
+        error: {}
+    },
+
+    post_comment_api: {
         requesting: false,
         successful: false,
         messages: [],
@@ -124,6 +138,43 @@ const reducer = function photoReducer (state = initialState, action) {
             return {
                 ...state,
                 get_likes_api: {
+                    requesting: false,
+                    successful: false,
+                    messages: [],
+                    error: action.error
+                }
+            }
+        }
+
+        case POST_COMMENT_API_REQUESTING: {
+            return {
+                ...state,
+                post_comment_api: {
+                    requesting: true,
+                    successful: false,
+                    messages: [],
+                    error: {}
+                }
+            }
+        }
+
+        case POST_COMMENT_API_SUCCESSFUL: {
+            return {
+                ...state,
+                comments: [...state.comments, action.comment],
+                post_comment_api: {
+                    requesting: false,
+                    successful: true,
+                    messages: [],
+                    error: {}
+                }
+            }
+        }
+
+        case POST_COMMENT_API_ERROR: {
+            return {
+                ...state,
+                post_comment_api: {
                     requesting: false,
                     successful: false,
                     messages: [],

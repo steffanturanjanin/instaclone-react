@@ -1,7 +1,8 @@
 import React from 'react'
 import './style.css'
 
-const Loader = () => {
+const Loader = (props) => {
+
     return (
         <div className="loader-container">
             <div className="lds-ring">

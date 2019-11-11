@@ -18,7 +18,12 @@ const LikesModal = (props) => {
                 onHide={onHide}
                 centered
             >
-                <Modal.Body style={{height:'450px', overflow: 'auto'}}>
+                <Modal.Body style={{height:'450px', overflow: 'auto', textAlign:'center'}}>
+
+                    <Modal.Title style={{margin:'auto', background:'#dbdbdb', marginBottom:'10px', fontWeight:'600'}}>
+                        Likes
+                    </Modal.Title>
+
                     <div className='row'>
                         {!props.status.successful ? (
                             <div className='col-12' style={{height:'400px'}}>

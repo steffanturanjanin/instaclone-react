@@ -56,6 +56,9 @@ const ShowPhotoModal = (props) => {
                                         likes_number={props.photo.likes}
                                         user={props.user}
                                         getLikesRequestAction={props.getLikesRequestAction}
+                                        postCommentRequestAction={props.postCommentRequestAction}
+                                        authUser={props.authUser}
+                                        commentStatus={props.commentStatus}
                                     />
                                 </div>
 

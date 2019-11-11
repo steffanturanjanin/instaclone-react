@@ -7,7 +7,7 @@ import ShowPhotoModal from './show-photo-modal/index';
 
 import { getFeedRequestAction } from "../../actions/feed_actions";
 import { closeModal, currentPhoto, nextPhoto, previousPhoto } from "../../actions/feed_actions";
-import { setPhoto, getPhotoInfoRequestAction, getLikesRequestAction, closeLikesModalAction } from "../../actions/photo_actions";
+import { setPhoto, getPhotoInfoRequestAction, getLikesRequestAction, postCommentRequestAction, closeLikesModalAction } from "../../actions/photo_actions";
 
 
 class Feed extends Component {
@@ -56,6 +56,9 @@ class Feed extends Component {
                         likesStatus={this.props.photo.get_likes_api}
                         closeLikesModalAction={this.props.closeLikesModalAction}
                         getLikesRequestAction={this.props.getLikesRequestAction}
+                        postCommentRequestAction={this.props.postCommentRequestAction}
+                        authUser={this.props.auth.user}
+                        commentStatus={this.props.photo.post_comment_api}
                     />
 
                 </>
@@ -68,12 +71,23 @@ class Feed extends Component {
 }
 
 const mapStateToProps = state => ({
+    auth: state.authReducer,
     feed: state.feedReducer,
     photo: state.photoReducer
 });
 
 
 const connected = connect(mapStateToProps,
-    { getFeedRequestAction, closeModal, currentPhoto, nextPhoto, previousPhoto, setPhoto, getPhotoInfoRequestAction, closeLikesModalAction, getLikesRequestAction })(Feed);
+    { getFeedRequestAction,
+        closeModal,
+        currentPhoto,
+        nextPhoto,
+        previousPhoto,
+        setPhoto,
+        getPhotoInfoRequestAction,
+        closeLikesModalAction,
+        getLikesRequestAction,
+        postCommentRequestAction
+    })(Feed);
 
 export default connected;
