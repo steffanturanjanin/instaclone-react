@@ -7,7 +7,13 @@ import ShowPhotoModal from './show-photo-modal/index';
 
 import { getFeedRequestAction } from "../../actions/feed_actions";
 import { closeModal, currentPhoto, nextPhoto, previousPhoto } from "../../actions/feed_actions";
-import { setPhoto, getPhotoInfoRequestAction, getLikesRequestAction, postCommentRequestAction, closeLikesModalAction } from "../../actions/photo_actions";
+import {
+    setPhoto,
+    getPhotoInfoRequestAction,
+    getLikesRequestAction,
+    postCommentRequestAction,
+    postLikeRequestAction, postUnlikeRequestAction,
+    closeLikesModalAction } from "../../actions/photo_actions";
 
 
 class Feed extends Component {
@@ -59,6 +65,9 @@ class Feed extends Component {
                         postCommentRequestAction={this.props.postCommentRequestAction}
                         authUser={this.props.auth.user}
                         commentStatus={this.props.photo.post_comment_api}
+                        liked={this.props.photo.like}
+                        postLikeRequestAction={this.props.postLikeRequestAction}
+                        postUnlikeRequestAction={this.props.postUnlikeRequestAction}
                     />
 
                 </>
@@ -87,7 +96,9 @@ const connected = connect(mapStateToProps,
         getPhotoInfoRequestAction,
         closeLikesModalAction,
         getLikesRequestAction,
-        postCommentRequestAction
+        postCommentRequestAction,
+        postLikeRequestAction,
+        postUnlikeRequestAction,
     })(Feed);
 
 export default connected;

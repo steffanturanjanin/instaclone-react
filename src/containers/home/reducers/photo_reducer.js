@@ -8,13 +8,19 @@ import {
     GET_LIKES_API_SUCCESSFUL,
     GET_LIKES_API_ERROR,
     POST_COMMENT_API_REQUESTING,
-    POST_COMMENT_API_SUCCESSFUL, POST_COMMENT_API_ERROR
+    POST_COMMENT_API_SUCCESSFUL,
+    POST_COMMENT_API_ERROR,
+    POST_LIKE_API_REQUESTING,
+    POST_LIKE_API_SUCCESSFUL,
+    POST_LIKE_API_ERROR,
+    POST_UNLIKE_API_REQUESTING, POST_UNLIKE_API_SUCCESSFUL, POST_UNLIKE_API_ERROR,
 } from "../constants/photo_constants";
 
 const initialState = {
     photo: {},
     comments: [],
     user: {},
+    like: false,
 
     get_photo_info_api : {
         requesting: false,
@@ -31,6 +37,20 @@ const initialState = {
     },
 
     post_comment_api: {
+        requesting: false,
+        successful: false,
+        messages: [],
+        error: {}
+    },
+
+    post_like_api: {
+        requesting: false,
+        successful: false,
+        messages: [],
+        error: {}
+    },
+
+    post_unlike_api: {
         requesting: false,
         successful: false,
         messages: [],
@@ -71,6 +91,7 @@ const reducer = function photoReducer (state = initialState, action) {
                 ...state,
                 comments: action.comments,
                 user: action.user,
+                like: action.like !== false,
                 get_photo_info_api: {
                     requesting: false,
                     successful: true,
@@ -175,6 +196,98 @@ const reducer = function photoReducer (state = initialState, action) {
             return {
                 ...state,
                 post_comment_api: {
+                    requesting: false,
+                    successful: false,
+                    messages: [],
+                    error: action.error
+                }
+            }
+        }
+
+        case POST_LIKE_API_REQUESTING: {
+            return {
+                ...state,
+                like: true,
+                post_like_api: {
+                    requesting: true,
+                    successful: false,
+                    messages: [],
+                    error: {}
+                }
+            }
+        }
+
+        case POST_LIKE_API_SUCCESSFUL: {
+            let photo = state.photo;
+            photo.likes++;
+            return {
+                ...state,
+                like: true,
+                photo: photo,
+                post_like_api: {
+                    requesting: false,
+                    successful: true,
+                    messages: [],
+                    error: {}
+                },
+                likes_modal: {
+                    ...state.likes_modal,
+                    likes: [...state.likes_modal.likes, action.like]
+                }
+            }
+        }
+
+        case POST_LIKE_API_ERROR: {
+            return {
+                ...state,
+                like: false,
+                post_like_api: {
+                    requesting: false,
+                    successful: false,
+                    messages: [],
+                    error: action.error
+                }
+            }
+        }
+
+        case POST_UNLIKE_API_REQUESTING: {
+            return {
+                ...state,
+                like: false,
+                post_unlike_api: {
+                    requesting: false,
+                    successful: false,
+                    messages: [],
+                    error: {}
+                }
+            }
+        }
+
+        case POST_UNLIKE_API_SUCCESSFUL: {
+            let photo = state.photo;
+            photo.likes--;
+            return {
+                ...state,
+                like: false,
+                photo: photo,
+                post_unlike_api: {
+                    requesting: false,
+                    successful: true,
+                    messages: [],
+                    error: {}
+                },
+                likes_modal: {
+                    ...state.likes_modal,
+                    likes: state.likes_modal.likes.filter(like => like !== action.like)
+                }
+            }
+        }
+
+        case POST_UNLIKE_API_ERROR: {
+            return {
+                ...state,
+                like: false,
+                post_unlike_api: {
                     requesting: false,
                     successful: false,
                     messages: [],

@@ -1,4 +1,12 @@
-import { SET_PHOTO, GET_PHOTO_INFO_API_REQUESTING, GET_LIKES_API_REQUESTING, POST_COMMENT_API_REQUESTING, CLOSE_LIKES_MODAL } from "../constants/photo_constants";
+import {
+    SET_PHOTO,
+    GET_PHOTO_INFO_API_REQUESTING,
+    GET_LIKES_API_REQUESTING,
+    POST_COMMENT_API_REQUESTING,
+    POST_LIKE_API_REQUESTING,
+    CLOSE_LIKES_MODAL,
+    POST_UNLIKE_API_REQUESTING
+} from "../constants/photo_constants";
 
 export const setPhoto = (photo) => ({
     type: SET_PHOTO,
@@ -22,6 +30,18 @@ export const postCommentRequestAction = (photo_id, user_id, content) => ({
     photo_id: photo_id,
     user_id: user_id,
     content: content
+});
+
+export const postLikeRequestAction = (photo_id, user_id) => ({
+   type: POST_LIKE_API_REQUESTING,
+   photo_id: photo_id,
+   user_id: user_id
+});
+
+export const postUnlikeRequestAction = (photo_id, user_id) => ({
+   type: POST_UNLIKE_API_REQUESTING,
+   photo_id: photo_id,
+   user_id: user_id
 });
 
 export const closeLikesModalAction = () => ({

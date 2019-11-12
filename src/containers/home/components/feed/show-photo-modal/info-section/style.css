@@ -76,10 +76,21 @@
     margin-top: 20px;
 }
 
-.like-icon {
+/*.like-icon {
     font-size: 25px;
     margin-bottom: 10px;
     float: left;
+}*/
+
+.like-icon, .unlike-icon {
+    font-size: 25px;
+    margin-bottom: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.like-icon {
+    color: #ff0546;
 }
 
 .likes {

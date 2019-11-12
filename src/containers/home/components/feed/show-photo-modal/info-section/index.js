@@ -11,6 +11,7 @@ class InfoSection extends Component {
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.like = this.like.bind(this);
     }
 
     showLikesModalAction = () => {
@@ -19,6 +20,14 @@ class InfoSection extends Component {
 
     onChange = (e) => {
         this.setState({[e.target.name]: e.target.value});
+    };
+
+    like = () => {
+        if (this.props.liked) {
+            this.props.postUnlikeRequestAction(this.props.id, this.props.authUser.id);
+        } else {
+            this.props.postLikeRequestAction(this.props.id, this.props.authUser.id);
+        }
     };
 
     onSubmit = (e) => {
@@ -80,7 +89,7 @@ class InfoSection extends Component {
                     }
 
                     <div className='col-12 comment-like-container'>
-                        <i className='fa fa-heart like-icon'/>
+                        <i className={this.props.liked ? 'fa fa-heart like-icon' : 'fa fa-heart-o unlike-icon'} onClick={this.like}/>
                         <p className='likes' onClick={this.showLikesModalAction}>{this.props.likes_number}</p>
                         <p className='post-date'> 4 days ago</p>
 
