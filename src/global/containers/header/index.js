@@ -6,12 +6,6 @@ import './style.css';
 class Header extends Component {
 
     render() {
-        console.log(this.props);
-
-        /*if (window.location.pathname === '/' || window.location.pathname === '/signup') {
-            return null;
-        }*/
-
         if (this.props.token === null) {
             return null;
         }
@@ -19,9 +13,15 @@ class Header extends Component {
         window.onscroll = function () {scrollFunction()};
         function scrollFunction() {
             if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
-                document.getElementById('header').style.height = '50px'
+                const header = document.getElementById('header');
+                if (header) {
+                    header.style.height = '50px';
+                }
             } else {
-                document.getElementById('header').style.height = '77px';
+                const header = document.getElementById('header');
+                if (header) {
+                    header.style.height = '77px';
+                }
             }
         }
 
@@ -63,6 +63,12 @@ class Header extends Component {
                                         d="M24 27c-7.1 0-12.9-5.8-12.9-12.9s5.8-13 12.9-13c7.1 0 12.9 5.8 12.9 12.9S31.1 27 24 27zm0-22.9c-5.5 0-9.9 4.5-9.9 9.9s4.4 10 9.9 10 9.9-4.5 9.9-9.9-4.4-10-9.9-10zM44 46.9c-.8 0-1.5-.7-1.5-1.5V42c0-5-4-9-9-9h-19c-5 0-9 4-9 9v3.4c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5V42c0-6.6 5.4-12 12-12h19c6.6 0 12 5.4 12 12v3.4c0 .8-.7 1.5-1.5 1.5z">
                                     </path>
                                 </g>
+                            </svg>
+                            <svg onClick={this.props.logout} xmlns="http://www.w3.org/2000/svg" fill="#262626" width="24" height="24" viewBox="0 0 24 24" style={{cursor: 'pointer'}}>
+                                <path
+                                    clipRule="evenodd"
+                                    fillRule="evenodd"
+                                    d="M10 9.408l2.963 2.592-2.963 2.592v-1.592h-8v-2h8v-1.592zm-2-4.408v4h-8v6h8v4l8-7-8-7zm6-3c-1.787 0-3.46.474-4.911 1.295l.228.2 1.396 1.221c1.004-.456 2.114-.716 3.287-.716 4.411 0 8 3.589 8 8s-3.589 8-8 8c-1.173 0-2.283-.26-3.288-.715l-1.396 1.221-.228.2c1.452.82 3.125 1.294 4.912 1.294 5.522 0 10-4.477 10-10s-4.478-10-10-10z"/>
                             </svg>
                         </div>
                     </div>

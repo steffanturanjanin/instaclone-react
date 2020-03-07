@@ -1,4 +1,4 @@
-import { USER_SET, USER_UNSET } from "./constants";
+import {LOGOUT_REQUESTING, USER_SET, USER_UNSET} from "./constants";
 
 export function setUserAction (token) {
     return {
@@ -7,8 +7,14 @@ export function setUserAction (token) {
     }
 }
 
-export function unserUserAction () {
+export function unsetUserAction () {
     return {
         type: USER_UNSET
     }
 }
+
+export const logoutRequestAction = () => {
+    return {
+        type: LOGOUT_REQUESTING
+    }
+};

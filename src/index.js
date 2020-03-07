@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createBrowserHistory } from 'history';
 import {BrowserRouter} from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
+import {unregister} from './services/interceptors/token.interceptor';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

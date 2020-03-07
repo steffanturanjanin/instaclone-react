@@ -43,12 +43,9 @@ class Home extends Component {
                     user = {this.props.auth.user}
                     uploadPhoto = {this.props.uploadPhoto}
                 />
-
                 <Feed/>
-
             </div>
         );
-
     }
 }
 

@@ -41,7 +41,7 @@ const reducer = function feedReducer(state = initialState, action) {
         case GET_FEED_SUCCESSFUL:
             return {
                 ...state,
-                photos: action.photos,
+                photos: action.photos.reverse(),
 
                 get_feed_api : {
                     requesting: false,

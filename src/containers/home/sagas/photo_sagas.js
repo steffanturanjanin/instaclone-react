@@ -94,7 +94,7 @@ function getLikesApi (photo_id) {
 }
 
 function getLikeApi (photo_id, user_id) {
-    return fetch(`http://localhost:8000/api/like/photo/${photo_id}/user/${user_id}`, {
+    return fetch(`http://localhost:8000/api/photos/${photo_id}/likes/user`, {
         method: 'GET',
         headers: {
             'X-Requested-With': 'XMLHttpRequest',
@@ -118,7 +118,8 @@ function* postComment (action) {
 
 function* getPhotoInfo (action) {
     try {
-        const [like, comments, user] = yield all([call(getLikeApi, action.photo_id, action.user_id) ,call(getCommentsApi, action.photo_id), call(getUserApi, action.user_id)]);
+        const [like, comments, user] = yield all([call(getLikeApi, action.photo_id, action.user_id), call(getCommentsApi, action.photo_id), call(getUserApi, action.user_id)]);
+        console.log(like.data);
         yield put({type: GET_PHOTO_INFO_API_SUCCESSFUL, comments: comments.data, user: user.data, like: like.data});
     } catch (error) {
         yield put({type: GET_PHOTO_INFO_API_ERROR, error});

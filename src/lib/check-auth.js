@@ -16,15 +16,12 @@ export function checkAuthorization ({dispatch}) {
         }
 
         dispatch(setUserAction(token));
-        console.log(true);
         return true;
     }
-    console.log(false);
     return false;
 }
 
 export function checkIndexAuthorization({ dispatch }) {
-
     return (nextState, replace, next) => {
         if (checkAuthorization(dispatch)) {
             replace('home');
@@ -33,6 +30,7 @@ export function checkIndexAuthorization({ dispatch }) {
         }
 
         replace('/');
+
         return next();
     }
 }

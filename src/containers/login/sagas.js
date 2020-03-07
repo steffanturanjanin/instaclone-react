@@ -1,8 +1,8 @@
-import { take, fork, cancel, call, put, cancelled } from 'redux-saga/effects';
+import { take, fork, cancel, call, put, cancelled, takeLatest } from 'redux-saga/effects';
 import { createBrowserHistory } from 'history';
 import { handleApiErrors } from "../../lib/api-errors";
 import { LOGIN_REQUESTING, LOGIN_SUCCESS, LOGIN_ERROR} from "./constants";
-import { setUserAction, unserUserAction } from "../../services/auth-service/actions";
+import { setUserAction, unsetUserAction } from "../../services/auth-service/actions";
 import { USER_SET, USER_UNSET} from "../../services/auth-service/constants";
 import { Redirect } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ function loginApi (email, password) {
 }
 
 function* logout() {
-    yield put(unserUserAction());
+    yield put(unsetUserAction());
     localStorage.removeItem('token');
     browserHistory.push('/')
     /*push to /login*/
@@ -34,14 +34,13 @@ function* loginFlow (email, password) {
     let token;
     try {
         token = yield call(loginApi, email, password);
-        console.log(token);
         yield put(setUserAction(token));
-        yield put({ type: LOGIN_SUCCESS});
+        yield put({type: LOGIN_SUCCESS});
 
         localStorage.setItem('token', JSON.stringify(token));
         //browserHistory.push('/');
     } catch (error) {
-        yield put({ type: LOGIN_ERROR, error});
+        yield put({type: LOGIN_ERROR, error});
     } finally {
         if (yield cancelled()) {
             browserHistory.push('/');
@@ -61,6 +60,7 @@ function* loginWatcher () {
         }
         yield call(logout);
     }
+
 }
 
 export default loginWatcher;
