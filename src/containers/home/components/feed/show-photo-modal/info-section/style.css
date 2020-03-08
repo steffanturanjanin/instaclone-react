@@ -69,11 +69,24 @@
 
 .info-section-comment-content {
     font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.info-section-comment-timestamp {
+    font-size: 12px;
+    font-weight: 100;
+    color: #937d85;
+    margin: 0;
 }
 
 .comment-like-container {
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.comment-area-container {
+    margin-top: 50px;
+    margin-bottom: 25px;
 }
 
 /*.like-icon {
@@ -124,7 +137,8 @@
     margin-left: 10px;
     position: absolute;
     right: 0;
-    top: 50%;
+    top: 25%;
+    left: 80%;
     margin-right: 30px;
     font-weight: 600;
     cursor: pointer;

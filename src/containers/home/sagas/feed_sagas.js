@@ -1,8 +1,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { handleApiErrors } from "../../../lib/api-errors";
-import { GET_FEED_REQUESTING, GET_FEED_SUCCESSFUL, GET_FEED_ERROR } from "../constants/feed_constants";
+import { GET_FEED_REQUESTING, GET_FEED_SUCCESSFUL } from "../constants/feed_constants";
 
-const getFeedUrl = 'http://localhost:8000/api/photo';
+const getFeedUrl = 'http://localhost:8000/api/photos';
 
 function getFeedApi() {
     return fetch(getFeedUrl, {

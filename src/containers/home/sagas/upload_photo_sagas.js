@@ -5,13 +5,11 @@ import { ADD_PHOTO } from "../constants/feed_constants";
 
 const uploadPhotoUrl = 'http://localhost:8000/api/photo';
 
-function uploadPhotoApi(photo, description, user_id) {
+function uploadPhotoApi(photo, description) {
 
     let formData = new FormData();
     formData.append('photo', photo);
     formData.append('description', description);
-    formData.append('user_id', user_id);
-
 
     return fetch(uploadPhotoUrl, {
         method: 'POST',
@@ -29,8 +27,8 @@ function uploadPhotoApi(photo, description, user_id) {
 
 function* uploadPhotoFlow (action) {
     try {
-        const {photo, description, user_id} = action.request;
-        const response = yield call(uploadPhotoApi, photo, description, user_id);
+        const {photo, description} = action.request;
+        const response = yield call(uploadPhotoApi, photo, description);
         yield put({ type: UPLOAD_PHOTO_SUCCESS, response});
         yield put({ type: ADD_PHOTO, uploaded_photo: response.uploaded_photo})
     } catch (error) {

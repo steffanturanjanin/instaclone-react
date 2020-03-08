@@ -25,23 +25,20 @@ export const getLikesRequestAction = (photo_id) => ({
     photo_id: photo_id
 });
 
-export const postCommentRequestAction = (photo_id, user_id, content) => ({
+export const postCommentRequestAction = (photo_id, content) => ({
     type: POST_COMMENT_API_REQUESTING,
     photo_id: photo_id,
-    user_id: user_id,
     content: content
 });
 
-export const postLikeRequestAction = (photo_id, user_id) => ({
+export const postLikeRequestAction = (photo_id) => ({
    type: POST_LIKE_API_REQUESTING,
-   photo_id: photo_id,
-   user_id: user_id
+   photo_id: photo_id
 });
 
-export const postUnlikeRequestAction = (photo_id, user_id) => ({
+export const postUnlikeRequestAction = (photo_id) => ({
    type: POST_UNLIKE_API_REQUESTING,
-   photo_id: photo_id,
-   user_id: user_id
+   photo_id: photo_id
 });
 
 export const closeLikesModalAction = () => ({

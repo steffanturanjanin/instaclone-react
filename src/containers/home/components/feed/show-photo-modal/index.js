@@ -10,15 +10,15 @@ const ShowPhotoModal = (props) => {
 
 
     function nextPhoto ()  {
-        props.nextPhoto(props.photo);
-        props.setPhoto(props.modal.next_photo);
-        props.getPhotoInfoRequestAction(props.modal.next_photo.id, props.modal.next_photo.user_id);
+        props.nextPhoto(props.photo.photo);
+        props.setPhoto(props.feed.modal.next_photo);
+        props.getPhotoInfoRequestAction(props.feed.modal.next_photo.id, props.feed.modal.next_photo.user_id);
     }
 
     function previousPhoto () {
-        props.previousPhoto(props.photo);
-        props.setPhoto(props.modal.previous_photo);
-        props.getPhotoInfoRequestAction(props.modal.previous_photo.id, props.modal.previous_photo.user_id);
+        props.previousPhoto(props.photo.photo);
+        props.setPhoto(props.feed.modal.previous_photo);
+        props.getPhotoInfoRequestAction(props.feed.modal.previous_photo.id, props.feed.modal.previous_photo.user_id);
     }
 
     if (props.photo !== null) {
@@ -26,18 +26,18 @@ const ShowPhotoModal = (props) => {
             <>
                 <Modal
                     size='lg'
-                    show={props.show}
+                    show={props.feed.modal.show}
                     onHide={props.onHide}
                     centered
                     dialogClassName="modal-90w"
                 >
 
                     <div className="row modal-container" >
-                        {props.modal.previous_photo !== null && (
+                        {props.feed.modal.previous_photo !== null && (
                             <span onClick={previousPhoto}><i className='fa fa-chevron-left slide-left'/></span>
                         )}
 
-                        {!props.status.successful ? (
+                        {!props.photo.get_photo_info_api.successful ? (
                             <div className='col-12' style={{height:'500px'}}>
                                 <Loader />
                             </div>
@@ -45,41 +45,32 @@ const ShowPhotoModal = (props) => {
                             <>
                                 <div className='col-7 modal-image-container'>
                                     <div className='modal-image-body'>
-                                        <img src={`data:image/jpeg;base64,${props.photo.content}`} alt='' className='modal-image'/>
+                                        <img src={`data:image/jpeg;base64,${props.photo.photo.content}`} alt='' className='modal-image'/>
                                     </div>
                                 </div>
                                 <div className='col-5 modal-info-section-container'>
                                     <InfoSection
-                                        id={props.photo.id}
-                                        description={props.photo.description}
-                                        comments={props.comments}
-                                        likes_number={props.photo.likes}
-                                        user={props.user}
+                                        photo={props.photo}
+                                        authUser={props.authUser}
                                         getLikesRequestAction={props.getLikesRequestAction}
                                         postCommentRequestAction={props.postCommentRequestAction}
-                                        authUser={props.authUser}
-                                        commentStatus={props.commentStatus}
-                                        liked={props.liked}
                                         postLikeRequestAction={props.postLikeRequestAction}
                                         postUnlikeRequestAction={props.postUnlikeRequestAction}
                                     />
                                 </div>
-
                                 <LikesModal
-                                    show={props.likesModal.show}
+                                    show={props.photo.likes_modal.show}
                                     onHide={props.closeLikesModalAction}
-                                    likes={props.likesModal.likes}
-                                    status={props.likesStatus}
+                                    likes={props.photo.likes_modal.likes}
+                                    status={props.photo.get_likes_api}
                                 />
 
                             </>
                         )}
-
-                        {props.modal.next_photo !== undefined && (
+                        {props.feed.modal.next_photo !== undefined && (
                             <span onClick={nextPhoto}><i className='fa fa-chevron-right slide-right'/></span>
                         )}
                     </div>
-
                 </Modal>
             </>
         )

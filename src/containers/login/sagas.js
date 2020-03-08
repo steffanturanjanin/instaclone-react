@@ -19,7 +19,6 @@ function loginApi (email, password) {
     })
         .then(handleApiErrors)
         .then(response => response.json())
-        .then(json => json)
         .catch((error) => { throw error })
 }
 

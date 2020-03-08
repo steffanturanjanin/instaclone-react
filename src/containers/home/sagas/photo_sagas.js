@@ -18,13 +18,13 @@ import {
 import { handleApiErrors } from "../../../lib/api-errors";
 
 
-function postCommentApi (photo_id, user_id, comment_content) {
-    return fetch ('http://localhost:8000/api/comment', {
+function postCommentApi (photo_id, comment_content) {
+    return fetch ('http://localhost:8000/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({photo_id, user_id, comment_content})
+        body: JSON.stringify({photo_id, comment_content})
     })
         .then(handleApiErrors)
         .then(response => response.json())
@@ -32,7 +32,7 @@ function postCommentApi (photo_id, user_id, comment_content) {
 }
 
 function getCommentsApi (photo_id) {
-    return fetch(`http://localhost:8000/api/photo/${photo_id}/comment`, {
+    return fetch(`http://localhost:8000/api/photos/${photo_id}/comments`, {
         method: 'GET',
         headers: {
             'X-Requested-With': 'XMLHttpRequest',
@@ -44,7 +44,7 @@ function getCommentsApi (photo_id) {
 }
 
 function getUserApi (user_id) {
-    return fetch(`http://localhost:8000/api/user/${user_id}`, {
+    return fetch(`http://localhost:8000/api/users/${user_id}`, {
         method: 'GET',
         headers: {
             'X-Requested-With': 'XMLHttpRequest',
@@ -55,26 +55,26 @@ function getUserApi (user_id) {
         .catch(error => {throw error})
 }
 
-function postLikeApi (photo_id, user_id) {
-    return fetch('http://localhost:8000/api/like', {
+function postLikeApi (photo_id) {
+    return fetch('http://localhost:8000/api/likes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({photo_id, user_id})
+        body: JSON.stringify({photo_id})
     })
         .then(handleApiErrors)
         .then(response => response.json())
         .catch(error => {throw error})
 }
 
-function postUnlikeApi (photo_id, user_id) {
-    return fetch('http://localhost:8000/api/like', {
+function postUnlikeApi (photo_id) {
+    return fetch('http://localhost:8000/api/likes', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({photo_id, user_id})
+        body: JSON.stringify({photo_id})
     })
         .then(handleApiErrors)
         .then(response => response.json())
@@ -82,7 +82,7 @@ function postUnlikeApi (photo_id, user_id) {
 }
 
 function getLikesApi (photo_id) {
-    return fetch(`http://localhost:8000/api/like/${photo_id}`, {
+    return fetch(`http://localhost:8000/api/photos/${photo_id}/likes`, {
         method: 'GET',
         headers: {
             'X-Requested-With': 'XMLHttpRequest',
@@ -93,7 +93,7 @@ function getLikesApi (photo_id) {
         .catch(error => {throw error})
 }
 
-function getLikeApi (photo_id, user_id) {
+function getLikeApi (photo_id) {
     return fetch(`http://localhost:8000/api/photos/${photo_id}/likes/user`, {
         method: 'GET',
         headers: {
@@ -109,7 +109,7 @@ function getLikeApi (photo_id, user_id) {
 
 function* postComment (action) {
     try {
-        const response = yield call(postCommentApi, action.photo_id, action.user_id, action.content);
+        const response = yield call(postCommentApi, action.photo_id, action.content);
         yield put({type: POST_COMMENT_API_SUCCESSFUL, comment: response.data});
     } catch (error) {
         yield put({type: POST_COMMENT_API_ERROR, error: error})
@@ -118,8 +118,8 @@ function* postComment (action) {
 
 function* getPhotoInfo (action) {
     try {
-        const [like, comments, user] = yield all([call(getLikeApi, action.photo_id, action.user_id), call(getCommentsApi, action.photo_id), call(getUserApi, action.user_id)]);
-        console.log(like.data);
+        const [like, comments, user] = yield all([call(getLikeApi, action.photo_id), call(getCommentsApi, action.photo_id), call(getUserApi, action.user_id)]);
+        console.log(comments.data);
         yield put({type: GET_PHOTO_INFO_API_SUCCESSFUL, comments: comments.data, user: user.data, like: like.data});
     } catch (error) {
         yield put({type: GET_PHOTO_INFO_API_ERROR, error});
@@ -128,7 +128,7 @@ function* getPhotoInfo (action) {
 
 function* postLike (action) {
     try {
-        const response = yield call(postLikeApi, action.photo_id, action.user_id);
+        const response = yield call(postLikeApi, action.photo_id);
         yield put({type: POST_LIKE_API_SUCCESSFUL, like: response.data, photo_id: action.photo_id});
     } catch (error) {
         yield put({type: POST_LIKE_API_ERROR, error: error})

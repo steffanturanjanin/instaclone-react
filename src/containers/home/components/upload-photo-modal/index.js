@@ -41,8 +41,7 @@ class UploadPhotoModal extends Component {
         e.preventDefault();
         this.props.handleUploadPhotoSubmit({
             photo: this.state.photo,
-            description: this.state.description,
-            user_id: this.props.user.id,
+            description: this.state.description
         })
     };
 

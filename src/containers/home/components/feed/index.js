@@ -18,7 +18,6 @@ import {
 
 class Feed extends Component {
 
-
     showInModal = (photo) => {
         this.props.currentPhoto(photo);
         this.props.setPhoto(photo);
@@ -30,8 +29,6 @@ class Feed extends Component {
     }
 
     render() {
-
-
         if (this.props.feed.get_feed_api.successful) {
             return (
                 <>
@@ -47,29 +44,20 @@ class Feed extends Component {
                         })}
                     </section>
                     <ShowPhotoModal
-                        show={this.props.feed.modal.show}
+                        feed={this.props.feed}
+                        photo={this.props.photo}
+                        authUser={this.props.auth}
                         onHide={this.props.closeModal}
-                        photo={this.props.photo.photo}
-                        comments={this.props.photo.comments}
-                        user={this.props.photo.user}
-                        status={this.props.photo.get_photo_info_api}
                         getPhotoInfoRequestAction={this.props.getPhotoInfoRequestAction}
                         previousPhoto={this.props.previousPhoto}
                         nextPhoto={this.props.nextPhoto}
-                        modal={this.props.feed.modal}
                         setPhoto={this.props.setPhoto}
-                        likesModal={this.props.photo.likes_modal}
-                        likesStatus={this.props.photo.get_likes_api}
                         closeLikesModalAction={this.props.closeLikesModalAction}
                         getLikesRequestAction={this.props.getLikesRequestAction}
                         postCommentRequestAction={this.props.postCommentRequestAction}
-                        authUser={this.props.auth.user}
-                        commentStatus={this.props.photo.post_comment_api}
-                        liked={this.props.photo.like}
                         postLikeRequestAction={this.props.postLikeRequestAction}
                         postUnlikeRequestAction={this.props.postUnlikeRequestAction}
                     />
-
                 </>
             )
         } else {

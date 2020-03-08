@@ -180,9 +180,12 @@ const reducer = function photoReducer (state = initialState, action) {
         }
 
         case POST_COMMENT_API_SUCCESSFUL: {
+            let photo = state.photo;
+            photo.comments++;
             return {
                 ...state,
                 comments: [...state.comments, action.comment],
+                photo: photo,
                 post_comment_api: {
                     requesting: false,
                     successful: true,
