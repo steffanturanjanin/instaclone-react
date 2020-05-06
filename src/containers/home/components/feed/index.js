@@ -73,20 +73,21 @@ const mapStateToProps = state => ({
     photo: state.photoReducer
 });
 
+const mapDispatchToProps = {
+    getFeedRequestAction,
+    closeModal,
+    currentPhoto,
+    nextPhoto,
+    previousPhoto,
+    setPhoto,
+    getPhotoInfoRequestAction,
+    closeLikesModalAction,
+    getLikesRequestAction,
+    postCommentRequestAction,
+    postLikeRequestAction,
+    postUnlikeRequestAction,
+};
 
-const connected = connect(mapStateToProps,
-    { getFeedRequestAction,
-        closeModal,
-        currentPhoto,
-        nextPhoto,
-        previousPhoto,
-        setPhoto,
-        getPhotoInfoRequestAction,
-        closeLikesModalAction,
-        getLikesRequestAction,
-        postCommentRequestAction,
-        postLikeRequestAction,
-        postUnlikeRequestAction,
-    })(Feed);
+const connected = connect(mapStateToProps, mapDispatchToProps)(Feed);
 
 export default connected;
