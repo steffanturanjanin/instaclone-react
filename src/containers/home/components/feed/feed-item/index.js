@@ -2,7 +2,6 @@ import React from 'react';
 
 const FeedItem = (props) => {
 
-
     function showInModal () {
         props.showInModal(props.photo);
     }

@@ -1,11 +1,9 @@
 import * as moment from 'moment';
 
 export function timestamp (created_at) {
-    console.log(created_at);
     const now = moment();
     const createdAt = moment(created_at);
 
-    console.log(now);
 // get the difference between the moments
     const diff = now.diff(createdAt);
 
@@ -13,11 +11,6 @@ export function timestamp (created_at) {
     const diffDuration = moment.duration(diff);
 
 // display
-    console.log("Weeks:", diffDuration.asWeeks().toFixed());
-    console.log("Days:", diffDuration.asDays().toFixed());
-    console.log("Hours:", diffDuration.asHours().toFixed());
-    console.log("Minutes:", diffDuration.asMinutes().toFixed());
-    console.log("Seconds:", diffDuration.asSeconds().toFixed());
 
     const weeks = diffDuration.asWeeks().toFixed();
     const days = diffDuration.asDays().toFixed();

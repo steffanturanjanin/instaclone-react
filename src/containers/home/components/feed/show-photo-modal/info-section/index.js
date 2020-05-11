@@ -34,7 +34,6 @@ class InfoSection extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props);
         this.props.postCommentRequestAction(this.props.photo.photo.id, this.state.comment);
         this.setState({comment: ''});
     };
@@ -44,7 +43,7 @@ class InfoSection extends Component {
             <div className='row info-section-container'>
                 <div className='col-12 info-section-header'>
                     <img className='info-section-header-user-avatar'
-                         src={this.props.photo.user.profile_picture === null ? 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg'
+                         src={this.props.photo.user.profile_picture === null ?  'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg'
                              : `data:image/jpeg;base64,${this.props.photo.user.profile_picture}`} alt=''/>
 
                     <p className='info-section-header-username'>{this.props.photo.user.username}</p>

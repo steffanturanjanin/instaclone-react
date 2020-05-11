@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './style.css';
@@ -35,7 +34,6 @@ class Home extends Component {
     };
 
     render() {
-        console.log(this.props);
         return (
             <div className='home-container'>
                 <UploadPhotoModal
@@ -56,12 +54,11 @@ const mapStateToProps = state => ({
 });
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-        uploadPhotoRequestAction: () => dispatch(uploadPhotoRequestAction)
-    }
+const mapDispatchToProps = {
+    uploadPhotoRequestAction,
+    getFeedRequestAction
 };
 
-const connected = connect(mapStateToProps, { uploadPhotoRequestAction, getFeedRequestAction })(Home);
+const connected = connect(mapStateToProps, mapDispatchToProps)(Home);
 
 export default connected;

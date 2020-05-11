@@ -8,7 +8,6 @@ import Loader from '../../../../../global/components/loader/index';
 
 const ShowPhotoModal = (props) => {
 
-
     function nextPhoto ()  {
         props.nextPhoto(props.photo.photo);
         props.setPhoto(props.feed.modal.next_photo);

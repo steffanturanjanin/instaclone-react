@@ -119,7 +119,6 @@ function* postComment (action) {
 function* getPhotoInfo (action) {
     try {
         const [like, comments, user] = yield all([call(getLikeApi, action.photo_id), call(getCommentsApi, action.photo_id), call(getUserApi, action.user_id)]);
-        console.log(comments.data);
         yield put({type: GET_PHOTO_INFO_API_SUCCESSFUL, comments: comments.data, user: user.data, like: like.data});
     } catch (error) {
         yield put({type: GET_PHOTO_INFO_API_ERROR, error});
@@ -138,7 +137,6 @@ function* postLike (action) {
 function* postUnlike (action) {
     try {
         const response = yield call(postUnlikeApi, action.photo_id, action.user_id);
-        console.log(response);
         yield put({type: POST_UNLIKE_API_SUCCESSFUL, like: response.data, photo_id: action.photo_id});
     } catch (error) {
         console.log(error);

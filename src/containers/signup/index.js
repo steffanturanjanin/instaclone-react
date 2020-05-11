@@ -86,7 +86,12 @@ const mapStateToProps = state => ({
     token: state.authReducer.token,
 });
 
-const connected = connect(mapStateToProps, { signupRequestAction, signupErrorAction })(Signup);
+const mapDispatchToProps = {
+    signupRequestAction,
+    signupErrorAction
+};
+
+const connected = connect(mapStateToProps, mapDispatchToProps)(Signup);
 
 const formed = reduxForm({
    form: 'signup,'

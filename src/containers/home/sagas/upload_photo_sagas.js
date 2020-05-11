@@ -3,7 +3,7 @@ import { handleApiErrors } from "../../../lib/api-errors";
 import { UPLOAD_PHOTO_REQUESTING, UPLOAD_PHOTO_SUCCESS, UPLOAD_PHOTO_ERROR } from "../constants/upload_photo_constants";
 import { ADD_PHOTO } from "../constants/feed_constants";
 
-const uploadPhotoUrl = 'http://localhost:8000/api/photo';
+const uploadPhotoUrl = 'http://localhost:8000/api/photos';
 
 function uploadPhotoApi(photo, description) {
 

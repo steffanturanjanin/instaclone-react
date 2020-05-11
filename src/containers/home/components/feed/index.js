@@ -63,7 +63,6 @@ class Feed extends Component {
         } else {
             return null;
         }
-
     }
 }
 

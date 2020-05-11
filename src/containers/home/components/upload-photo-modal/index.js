@@ -29,7 +29,6 @@ class UploadPhotoModal extends Component {
             this.file_remember = e.target.files[0];
         }*/
         this.setState({photo: e.target.files[0], photo_url: URL.createObjectURL(e.target.files[0])});
-        console.log(this.state);
 
     }
 
@@ -47,9 +46,7 @@ class UploadPhotoModal extends Component {
 
 
     render() {
-
         const { uploadPhoto } = this.props;
-
 
         return(
             <>
@@ -105,7 +102,6 @@ class UploadPhotoModal extends Component {
             </>
         )
     }
-
 }
 
 UploadPhotoModal.propTypes = {

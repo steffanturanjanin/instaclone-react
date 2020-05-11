@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from "react-router-dom";
-import {checkAuthorization, checkIndexAuthorization, checkProtectedRouteAuthorization} from "./lib/check-auth";
+import { Route, Switch } from "react-router-dom";
+import { checkAuthorization } from "./lib/check-auth";
 import { store } from "./index";
 import './App.css';
 
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 
 import { Signup } from './containers/signup/index';
 import Login from './containers/login/index';
 import Home from './containers/home/index';
 import Redirectioner from './lib/redirectioner';
-import {loginErrorAction, loginRequestAction} from "./containers/login/actions";
-import {logoutRequestAction} from "./services/auth-service/actions";
+import { logoutRequestAction } from "./services/auth-service/actions";
 
 import Header from './global/containers/header/index';
 
 class App extends Component{
     constructor(props) {
         super(props);
-        console.log(props);
     }
 
     componentDidMount() {
@@ -45,7 +42,6 @@ class App extends Component{
         );
     }
 }
-
 
 const mapStateToProps = state => {
     return {

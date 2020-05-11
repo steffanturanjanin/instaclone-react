@@ -4,9 +4,6 @@ import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import Header from '../../global/containers/header/index';
-
-
 import Form from './components/form/index';
 
 import {loginRequestAction} from './actions';
@@ -83,7 +80,12 @@ const mapStateToProps = state => ({
     token: state.authReducer.token,
 });
 
-const connected = connect(mapStateToProps, { loginRequestAction, loginErrorAction })(Login);
+const mapDispatchToProps = {
+    loginRequestAction,
+    loginErrorAction
+};
+
+const connected = connect(mapStateToProps, mapDispatchToProps)(Login);
 
 const formed = reduxForm({
    form: 'login',

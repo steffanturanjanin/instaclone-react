@@ -1,7 +1,5 @@
 import {
     GET_FEED_REQUESTING,
-    GET_FEED_SUCCESSFUL,
-    GET_FEED_ERROR,
     CURRENT_PHOTO,
     CLOSE_MODAL, NEXT_PHOTO, PREVIOUS_PHOTO
 } from "../constants/feed_constants";
