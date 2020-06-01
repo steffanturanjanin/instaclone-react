@@ -17,7 +17,6 @@ import {
 } from "../constants/photo_constants";
 import { handleApiErrors } from "../../../lib/api-errors";
 
-
 function postCommentApi (photo_id, comment_content) {
     return fetch ('http://localhost:8000/api/comments', {
         method: 'POST',
@@ -104,8 +103,6 @@ function getLikeApi (photo_id) {
         .then(response => response.json())
         .catch(error => {throw error})
 }
-
-
 
 function* postComment (action) {
     try {

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { reduxForm, Field } from "redux-form";
-import Link, {Redirect} from 'react-router';
+import { reduxForm } from "redux-form";
+import { Redirect } from 'react-router';
 import { signupRequestAction, signupErrorAction } from './actions';
 
 import Form from './components/form/index';
 
 import './style.css';
-
 
 class Signup extends Component {
 
@@ -52,9 +51,7 @@ class Signup extends Component {
 
     };
 
-
     render() {
-
         const {
             handleSubmit,
             signup: {
@@ -64,7 +61,6 @@ class Signup extends Component {
                 errors,
             },
         } = this.props;
-
 
         if (this.props.token !== null) {
             return (
@@ -77,7 +73,6 @@ class Signup extends Component {
                 handleSubmit={handleSubmit(this.submit)}
                 signup={this.props.signup}/>
         );
-
     }
 }
 

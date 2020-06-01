@@ -43,7 +43,7 @@ class InfoSection extends Component {
             <div className='row info-section-container'>
                 <div className='col-12 info-section-header'>
                     <img className='info-section-header-user-avatar'
-                         src={this.props.photo.user.profile_picture === null ?  'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg'
+                         src={this.props.photo.user.profile_picture === null ?  'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg'
                              : `data:image/jpeg;base64,${this.props.photo.user.profile_picture}`} alt=''/>
 
                     <p className='info-section-header-username'>{this.props.photo.user.username}</p>
@@ -53,7 +53,7 @@ class InfoSection extends Component {
 
                         <div className='info-section-comment-avatar-container'>
                             <img className='info-section-comment-avatar'
-                                 src={this.props.photo.user.profile_picture === null ? 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg'
+                                 src={this.props.photo.user.profile_picture === null ? 'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg'
                                      : `data:image/jpeg;base64,${this.props.photo.user.profile_picture}`} alt=''>
                             </img>
                         </div>
@@ -73,7 +73,7 @@ class InfoSection extends Component {
 
                                 <div className='info-section-comment-avatar-container'>
                                     <img className='info-section-comment-avatar'
-                                         src={comment.user.profile_picture === null ? 'https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg'
+                                         src={comment.user.profile_picture === null ? 'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg'
                                              : `data:image/jpeg;base64,${comment.user.profile_picture}`} alt=''>
                                     </img>
                                 </div>

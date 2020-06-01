@@ -44,13 +44,6 @@ class Login extends Component {
         }
     };
 
-    redirect = () => {
-        if (this.props.token !== null) {
-            console.log(this.props.token);
-            return <Redirect push to='/'/>
-        }
-    };
-
     render() {
         const {
             handleSubmit,

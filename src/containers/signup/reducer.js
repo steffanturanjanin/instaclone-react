@@ -36,10 +36,6 @@ const reducer = function signupReducer (state = initialState, action) {
               successful: false,
               messages: [],
               errors: action.error,
-              /*errors: state.errors.concat([{
-                  body: action.error.toString(),
-                  time: new Date()
-              }])*/
           };
 
       default:

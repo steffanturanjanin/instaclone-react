@@ -1,8 +1,6 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { handleApiErrors } from "../../lib/api-errors";
 import { SIGNUP_REQUESTING, SIGNUP_SUCCESS, SIGNUP_ERROR } from './constants';
-import { LOGIN_REQUESTING} from "../login/constants";
-import history from '../../lib/history';
 
 import { loginRequestAction } from "../login/actions";
 
@@ -17,7 +15,6 @@ function signupApi(username, email, password, password_confirmation) {
         },
         body: JSON.stringify({ username, email, password, password_confirmation }),
     })
-
         .then(handleApiErrors)
         .then(response => response.json())
         .then(json => json)
@@ -30,16 +27,13 @@ function* signupFlow (action) {
         const response = yield call(signupApi, username, email, password, password_confirmation);
         yield put({ type: SIGNUP_SUCCESS, response});
         yield put(loginRequestAction({email, password}));
-        //history.push('/');
     } catch (error) {
         console.log(error);
         yield put({ type: SIGNUP_ERROR, error});
     }
 }
 
-
 function* signupWatcher () {
-
     yield takeLatest(SIGNUP_REQUESTING, signupFlow);
 }
 

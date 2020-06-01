@@ -44,10 +44,8 @@ class UploadPhotoModal extends Component {
         })
     };
 
-
     render() {
         const { uploadPhoto } = this.props;
-
         return(
             <>
                 <UploadPhotoButton handleOnClick={this.handleShow}/>
@@ -58,14 +56,12 @@ class UploadPhotoModal extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <div className='col-md-12'>
-
                             <form className='upload-photo-container' onSubmit={this.onSubmit}>
                                 <div className='row'>
                                     <div className='col-md-6'>
                                         <img alt='' src={this.state.photo_url === null ?
                                             'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYMDOtwg9M_ZVWCULk0kCyzASqXcwkAAVTEIKQDzukpT6w8T-U' :
                                             this.state.photo_url} />
-
                                         <input
                                             id="upload-photo-input"
                                             name="upload"

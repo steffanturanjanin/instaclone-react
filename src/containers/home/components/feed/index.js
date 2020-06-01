@@ -15,7 +15,6 @@ import {
     postLikeRequestAction, postUnlikeRequestAction,
     closeLikesModalAction } from "../../actions/photo_actions";
 
-
 class Feed extends Component {
 
     showInModal = (photo) => {

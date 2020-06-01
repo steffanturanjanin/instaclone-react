@@ -1,5 +1,4 @@
 import {SIGNUP_ERROR, SIGNUP_REQUESTING} from "./constants";
-import {LOGIN_ERROR} from "../login/constants";
 
 export const signupRequestAction = function signupRequestAction ({ username, email, password, password_confirmation }) {
   return {

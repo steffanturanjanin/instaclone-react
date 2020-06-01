@@ -30,7 +30,6 @@ const ShowPhotoModal = (props) => {
                     centered
                     dialogClassName="modal-90w"
                 >
-
                     <div className="row modal-container" >
                         {props.feed.modal.previous_photo !== null && (
                             <span onClick={previousPhoto}><i className='fa fa-chevron-left slide-left'/></span>
